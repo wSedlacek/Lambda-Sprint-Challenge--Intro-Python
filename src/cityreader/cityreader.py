@@ -91,7 +91,7 @@ def cityreader_stretch(lat1: float, lon1: float, lat2: float, lon2: float, citie
         lon_within = small_lon < city.lon and city.lon < large_lon
         return lat_within and lon_within
 
-    return [city for city in cities if is_within(city)]
+    return filter(is_within, cities)
 
 
 (lat1, lon1) = input('Enter lat1,lon1: ').split(',')
